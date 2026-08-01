@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cyber-black text-cyber-yellow overflow-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .cyber-panel {
+    @apply bg-cyber-black/80 border border-cyber-yellow/20 backdrop-blur-sm;
+  }
+  
+  .cyber-button {
+    @apply relative px-6 py-2 bg-transparent border border-cyber-yellow text-cyber-yellow font-bold uppercase tracking-wider transition-all duration-300 hover:bg-cyber-yellow hover:text-cyber-black active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .cyber-badge {
+    @apply px-2 py-0.5 text-[10px] font-bold bg-cyber-green/10 border border-cyber-green text-cyber-green rounded-sm;
+  }
+}
+
+.scanline {
+  width: 100%;
+  height: 100px;
+  z-index: 50;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 215, 0, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.1;
+  position: absolute;
+  top: -100px;
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% { top: -100px; }
+  100% { top: 100%; }
+}
+
+.glow-yellow {
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.glitch-text {
+  position: relative;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+}
